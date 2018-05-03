@@ -1,0 +1,8 @@
+---
+- import_tasks: apt.yml
+  when: ansible_distribution == 'Ubuntu'
+  tags: apt
+
+- import_tasks: create_user.yml
+  when: ansible_distribution == 'Ubuntu'
+  tags: create_user

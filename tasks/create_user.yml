@@ -1,0 +1,6 @@
+---
+- name: Create new user and add to the "sudo" group
+  user:
+    name: '{{username}}'
+    password: '{{password}}'
+    groups: sudo

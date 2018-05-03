@@ -1,0 +1,21 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'
+
+  vars_prompt:
+    - name: 'username'
+      prompt: 'What is the username for the new user?'
+      private: no
+
+    - name: 'password'
+      prompt: 'What is the password for the new user?'
+      private: yes
+      encrypt: sha512_crypt
+      confirm: yes
+
+  roles:
+    - anu
