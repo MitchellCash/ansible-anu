@@ -15,6 +15,7 @@ being too overbearing.
   * rsh-server
   * prelink
 * Prompts for a username/password and creates a new user in the "sudo" group ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges))
+* Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
 
 ## Requirements
 

@@ -3,6 +3,20 @@
   when: ansible_distribution == 'Ubuntu'
   tags: apt
 
+- name: Create sshd_config and set permissions to root/600
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: '0600'
+    owner: root
+    group: root
+    validate: /usr/sbin/sshd -t -f %s
+  notify: Restart SSHD
+
 - import_tasks: create_user.yml
   when: ansible_distribution == 'Ubuntu'
   tags: create_user
+
+- import_tasks: set_user_ssh_key.yml
+  when: ansible_distribution == 'Ubuntu'
+  tags: set_user_ssh_key

@@ -1,0 +1,5 @@
+- name: Set SSH key for new user
+  authorized_key:
+    user: '{{username}}'
+    state: present
+    key: '{{public_ssh_key}}'
