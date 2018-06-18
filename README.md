@@ -20,7 +20,7 @@ being too overbearing.
 
 ## Requirements
 
-This is tested on both Ubuntu 14.04 (Trusty Tahr) and Ubuntu 16.04 (Xenial Xerus).
+ANU is tested on both Ubuntu 14.04 (Trusty Tahr) and Ubuntu 16.04 (Xenial Xerus).
 
 **Ansible**
 
@@ -48,6 +48,11 @@ command to provision your new Ubuntu system:
 ```
 ansible-playbook anu.yml
 ```
+
+## License
+
+ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more
+information or see https://opensource.org/licenses/MIT.
 
 [1]: https://github.com/dev-sec/ansible-os-hardening#packages
 [2]: https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67
