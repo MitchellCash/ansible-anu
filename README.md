@@ -1,5 +1,9 @@
 # ANU
 
+[![Build Status](https://travis-ci.com/mitchellcash/ansible-anu.svg?branch=master)](https://travis-ci.com/mitchellcash/ansible-anu)
+
+## What is ANU?
+
 ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in
 provisioning a new Ubuntu machine. It helps create a secure base system, without
 being too overbearing.
