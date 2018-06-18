@@ -1,11 +1,5 @@
 ---
 - hosts: all
-  pre_tasks:
-    - name: Run the equivalent of "apt-get update" as a separate step
-      apt:
-        update_cache: yes
-      when: ansible_distribution == 'Ubuntu'
-
   vars_prompt:
     - name: 'username'
       prompt: 'Enter username for the new user'
