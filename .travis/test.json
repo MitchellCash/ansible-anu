@@ -1,0 +1,5 @@
+{
+  "username":"John",
+  "password":"SecurePassword",
+  "public_ssh_key":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqzEsOeJLNXNtPNvO5xafO6n5t06cqLOmvok7dyiaME"
+}
