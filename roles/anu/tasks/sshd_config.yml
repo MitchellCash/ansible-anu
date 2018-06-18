@@ -6,4 +6,4 @@
     owner: root
     group: root
     validate: '/usr/sbin/sshd -t -f %s'
-  notify: Restart SSHD
+  notify: Restart sshd
