@@ -5,3 +5,8 @@
     password: '{{password}}'
     groups: sudo
     shell: /bin/bash
+
+- name: Add SSH public key to the new user to allow SSH access
+  authorized_key:
+    user: '{{username}}'
+    key: '{{user_ssh_public_key}}'

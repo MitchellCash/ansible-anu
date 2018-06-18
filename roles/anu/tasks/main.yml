@@ -13,7 +13,3 @@
 - import_tasks: create_user.yml
   when: ansible_distribution == 'Ubuntu'
   tags: create_user
-
-- import_tasks: set_user_ssh_key.yml
-  when: ansible_distribution == 'Ubuntu'
-  tags: set_user_ssh_key

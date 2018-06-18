@@ -8,17 +8,17 @@
 
   vars_prompt:
     - name: 'username'
-      prompt: 'What is the username for the new user?'
+      prompt: 'Enter username for the new user'
       private: no
 
     - name: 'password'
-      prompt: 'What is the password for the new user?'
+      prompt: 'Enter password for the new user'
       private: yes
       encrypt: sha512_crypt
       confirm: yes
 
-    - name: 'public_ssh_key'
-      prompt: 'What is the public SSH key for the new user?'
+    - name: 'user_ssh_public_key'
+      prompt: 'Enter SSH public key for the new user'
       private: no
 
   roles:
