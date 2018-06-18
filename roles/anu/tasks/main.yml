@@ -13,6 +13,9 @@
     validate: /usr/sbin/sshd -t -f %s
   notify: Restart SSHD
 
+- name: Deactivate Diffie-Hellman moduli less than 3072-bit long
+  shell: awk '$5 >= 3071' /etc/ssh/moduli > /etc/ssh/moduli.tmp && mv /etc/ssh/moduli.tmp /etc/ssh/moduli
+
 - import_tasks: create_user.yml
   when: ansible_distribution == 'Ubuntu'
   tags: create_user

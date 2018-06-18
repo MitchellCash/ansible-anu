@@ -6,7 +6,7 @@ being too overbearing.
 
 ## Features
 
-* Remove APT packages with known issues ([Source](https://github.com/dev-sec/ansible-os-hardening#packages))
+* Remove APT packages with known issues ([Source](1))
   * xinetd
   * inetd
   * tftp-server
@@ -14,10 +14,13 @@ being too overbearing.
   * telnet-server
   * rsh-server
   * prelink
-* Prompts for a username/password and creates a new user in the "sudo" group ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges))
-* Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
+* Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](2))
+* Deactivate Diffie-Hellman moduli less than 3072-bit long ([Source](2))
+* Prompts for a username/password and creates a new user in the "sudo" group ([Source](3))
 
 ## Requirements
+
+This is tested on both Ubuntu 14.04 (Trusty Tahr) and Ubuntu 16.04 (Xenial Xerus).
 
 **Ansible**
 
@@ -46,9 +49,6 @@ command to provision your new Ubuntu system:
 ansible-playbook anu.yml
 ```
 
-## Inspiration
-
-ANU borrows themes and ideas from the following projects and articles:
-
-* [dev-sec/ansible-os-hardening](https://github.com/dev-sec/ansible-os-hardening)
-* [Digital Ocean - Initial Server Setup](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04)
+[1]: https://github.com/dev-sec/ansible-os-hardening#packages
+[2]: https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67
+[3]: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges
