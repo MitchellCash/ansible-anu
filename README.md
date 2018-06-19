@@ -18,6 +18,7 @@ being too overbearing.
   * telnet-server
   * rsh-server
   * prelink
+* Enable UFW and allow connections to SSH server port ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-seven-%E2%80%94-set-up-a-basic-firewall))
 * Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
 * Deactivate Diffie-Hellman moduli less than 3072-bit long ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
 * Prompts for a username, password & ssh public key and creates a new user in the "sudo" group ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges))

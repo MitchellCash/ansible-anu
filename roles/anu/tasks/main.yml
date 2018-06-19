@@ -3,6 +3,10 @@
   when: ansible_distribution == 'Ubuntu'
   tags: apt
 
+- import_tasks: ufw.yml
+  when: ansible_distribution == 'Ubuntu'
+  tags: ufw
+
 - import_tasks: sshd_config.yml
   when: ansible_distribution == 'Ubuntu'
   tags: sshd_config

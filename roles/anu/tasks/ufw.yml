@@ -1,0 +1,6 @@
+---
+- name: Enable UFW and allow connections to SSH server port
+  ufw:
+    state: enabled
+    rule: allow
+    port: "{{ ssh_server_port }}"
