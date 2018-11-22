@@ -1,6 +1,6 @@
 # ANU
 
-[![Build Status](https://travis-ci.com/mitchellcash/ansible-anu.svg?branch=master)](https://travis-ci.com/mitchellcash/ansible-anu)
+[![Build Status](https://travis-ci.com/MitchellCash/ansible-anu.svg?branch=master)](https://travis-ci.com/MitchellCash/ansible-anu)
 
 ## What is ANU?
 
