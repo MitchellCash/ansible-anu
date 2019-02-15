@@ -3,6 +3,10 @@
   apt:
     update_cache: yes
 
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
 - name: Remove packages with known issues
   apt:
     name: '{{ os_security_packages_list }}'
