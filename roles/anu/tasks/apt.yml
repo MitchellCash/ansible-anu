@@ -5,8 +5,6 @@
 
 - name: Remove packages with known issues
   apt:
-    name: '{{ item }}'
+    name: '{{ os_security_packages_list }}'
     state: absent
-  with_items:
-    - '{{ os_security_packages_list }}'
   when: 'os_security_packages_clean'
