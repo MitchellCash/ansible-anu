@@ -12,3 +12,7 @@
     name: '{{ os_security_packages_list }}'
     state: absent
   when: 'os_security_packages_clean'
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes
