@@ -33,19 +33,19 @@ ANU is tested on:
 **Ansible**
 
 ```
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 ```
 
 **Passlib**
 
-Passlib requires Python 2 (>= 2.6) or Python 3 (>= 3.3).
+Required for generating secure passwords.
 
 ```
-sudo apt-get install python-pip
-pip install passlib
+sudo apt install python3-pip
+pip3 install passlib
 ```
 
 ## Quick Start
