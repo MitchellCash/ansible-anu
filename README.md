@@ -25,8 +25,8 @@ being too overbearing.
 
 ## Requirements
 
-ANU is tested on:
-- Ubuntu 14.04 (Trusty Tahr)
+ANU is tested on Ubuntu LTS releases:
+
 - Ubuntu 16.04 (Xenial Xerus)
 - Ubuntu 18.04 (Bionic Beaver)
 

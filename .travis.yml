@@ -8,8 +8,6 @@ services:
 
 env:
   - distribution: ubuntu
-    version: trusty
-  - distribution: ubuntu
     version: xenial
   - distribution: ubuntu
     version: bionic
