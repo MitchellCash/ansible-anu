@@ -3,4 +3,4 @@
   ufw:
     state: enabled
     rule: allow
-    port: "{{ ssh_server_port }}"
+    port: "{{ ssh_port }}"
