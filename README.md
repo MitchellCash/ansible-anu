@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/MitchellCash/ansible-anu.svg?branch=master)](https://travis-ci.com/MitchellCash/ansible-anu)
 
-## What is ANU?
+## What is ANU
 
 ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in
 provisioning a new Ubuntu machine. It helps create a secure base system, without
@@ -27,12 +27,20 @@ being too overbearing.
 
 ANU is tested on Ubuntu LTS releases:
 
-- Ubuntu 16.04 (Xenial Xerus)
-- Ubuntu 18.04 (Bionic Beaver)
+* Ubuntu 16.04 (Xenial Xerus)
+* Ubuntu 18.04 (Bionic Beaver)
+* Ubuntu 20.04 (Focal Fossa)
 
 **Ansible**
 
+```sh
+sudo apt update
+sudo apt install software-properties-common ansible
 ```
+
+**Ansible <= 18.04**
+
+```sh
 sudo apt update
 sudo apt install software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
@@ -43,7 +51,7 @@ sudo apt install ansible
 
 Required for generating secure passwords.
 
-```
+```sh
 sudo apt install python3-pip
 pip3 install passlib
 ```
@@ -53,7 +61,7 @@ pip3 install passlib
 Once the requirements are installed, all you need to do is run the following
 command to provision your new Ubuntu system:
 
-```
+```sh
 ansible-playbook anu.yml
 ```
 

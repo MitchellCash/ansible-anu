@@ -1,0 +1,12 @@
+FROM ubuntu:bionic
+
+RUN apt-get update && apt-get dist-upgrade -y && apt-get install -y \
+    software-properties-common \
+    git \
+    ansible \
+    init \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+ENTRYPOINT ["/sbin/init"]
