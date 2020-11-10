@@ -38,7 +38,7 @@ sudo apt update
 sudo apt install software-properties-common ansible
 ```
 
-**Ansible <= 18.04**
+**Ansible (Ubuntu <= 18.04)**
 
 ```sh
 sudo apt update
