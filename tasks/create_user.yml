@@ -1,19 +1,4 @@
 ---
-vars_prompt:
-  - name: 'username'
-    prompt: 'Enter username for the new user'
-    private: no
-
-  - name: 'password'
-    prompt: 'Enter password for the new user'
-    private: yes
-    encrypt: sha512_crypt
-    confirm: yes
-
-  - name: 'user_ssh_public_key'
-    prompt: 'Enter SSH public key for the new user'
-    private: no
-
 - name: Create new user and add to the "sudo" group
   user:
     name: '{{username}}'
