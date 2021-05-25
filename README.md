@@ -69,3 +69,18 @@ ansible-playbook anu.yml
 
 ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more
 information or see https://opensource.org/licenses/MIT.
+
+
+
+Dev notes
+
+1. `ansible-galaxy role install -r requirements.yml`
+1. `ansible-galaxy collection install -r requirements.yml`
+2. `ansible-playbook playbook.yml`
+
+
+On Ubuntu 20.04 need Ansible 2.10
+
+`sudo add-apt-repository ppa:ansible/testing-ansible-2.10`
+`sudo apt update`
+`sudo apt install ansible`
