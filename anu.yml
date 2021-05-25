@@ -12,7 +12,7 @@
     - name: 'password'
       prompt: 'password for the new user'
       private: yes
-      encrypt: bcrypt
+      encrypt: sha512_crypt
       confirm: yes
 
     - name: 'user_ssh_public_key'
