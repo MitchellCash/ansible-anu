@@ -1,71 +1,68 @@
 # ANU
 
-[![Build Status](https://travis-ci.com/MitchellCash/ansible-anu.svg?branch=master)](https://travis-ci.com/MitchellCash/ansible-anu)
+[![CI](https://github.com/MitchellCash/ansible-anu/actions/workflows/ci.yml/badge.svg)](https://github.com/MitchellCash/ansible-anu/actions/workflows/ci.yml)
 
 ## What is ANU
 
-ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in
-provisioning a new Ubuntu machine. It helps create a secure base system, without
-being too overbearing.
+ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in provisioning a new
+Ubuntu machine. It depends on certain third-party Ansible roles and then extends them to offer
+a more opinionated new Ubuntu setup (see [Features](#features)).
 
 ## Features
 
-* Remove APT packages with known issues ([Source](https://github.com/dev-sec/ansible-os-hardening#packages))
-  * xinetd
-  * inetd
-  * tftp-server
-  * ypserv
-  * telnet-server
-  * rsh-server
-  * prelink
-* Enable UFW and allow connections to SSH server port ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-seven-%E2%80%94-set-up-a-basic-firewall))
-* Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
-* Deactivate Diffie-Hellman moduli less than 3072-bit long ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
-* Prompts for a username, password & ssh public key and creates a new user in the "sudo" group ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges))
+### Third-party
+
+* Provides OS hardening via [dev-sec.os-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/os_hardening)
+* Provides SSH hardening via [dev-sec.ssh-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/ssh_hardening)
+
+### ANU
+
+* Set server timezone to UTC
+* Configure UFW to allow traffic on the specified SSH port and enable UFW
+* Prompts for a username, password & SSH public key and creates a new user in the "sudo" group
 
 ## Requirements
 
-ANU is tested on Ubuntu LTS releases:
+ANU is tested on the following Ubuntu LTS releases:
 
-* Ubuntu 16.04 (Xenial Xerus)
-* Ubuntu 18.04 (Bionic Beaver)
-* Ubuntu 20.04 (Focal Fossa)
-
-**Ansible**
-
-```sh
-sudo apt update
-sudo apt install software-properties-common ansible
-```
-
-**Ansible (Ubuntu <= 18.04)**
+### Ubuntu 18.04 (Bionic Beaver)
 
 ```sh
 sudo apt update
 sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
 
-**Passlib**
+### Ubuntu 20.04 (Focal Fossa)
 
-Required for generating secure passwords.
+Ubuntu 20.04 requires Ansible >=2.10, which as of the time of writing is not yet available in the
+main Ansible PPA. In order to install 2.10 we must add the `ansible/testing-ansible-2.10` PPA.
 
 ```sh
-sudo apt install python3-pip
-pip3 install passlib
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ansible/testing-ansible-2.10
+sudo apt install ansible
 ```
 
 ## Quick Start
 
-Once the requirements are installed, all you need to do is run the following
-command to provision your new Ubuntu system:
+Once the requirements are installed, all you need to do is run the following commands to provision
+your new Ubuntu system:
 
 ```sh
+# Install collection requirements.
+ansible-galaxy collection install -r requirements.yml
+
+# Install role requirements.
+ansible-galaxy role install -r requirements.yml
+
+# Run the ANU playbook.
 ansible-playbook anu.yml
 ```
 
 ## License
 
-ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more
-information or see https://opensource.org/licenses/MIT.
+ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or
+see https://opensource.org/licenses/MIT.

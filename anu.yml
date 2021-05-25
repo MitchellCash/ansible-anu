@@ -1,19 +1,41 @@
 ---
 - hosts: all
+
+  vars_files:
+    - vars/main.yml
+
   vars_prompt:
     - name: 'username'
-      prompt: 'Enter username for the new user'
+      prompt: 'username for the new user'
       private: no
 
     - name: 'password'
-      prompt: 'Enter password for the new user'
+      prompt: 'password for the new user'
       private: yes
       encrypt: sha512_crypt
       confirm: yes
 
     - name: 'user_ssh_public_key'
-      prompt: 'Enter SSH public key for the new user'
+      prompt: 'SSH public key for the new user'
       private: no
 
   roles:
-    - anu
+    - name: dev-sec.os-hardening
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: dev-sec.ssh-hardening
+      when: ansible_distribution == 'Ubuntu'
+
+  tasks:
+    - name: Set timezone to UTC
+      community.general.timezone:
+        name: Etc/UTC
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: 'ANU: Configure and enable UFW'
+      import_tasks: tasks/ufw.yml
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: 'ANU: Create user'
+      import_tasks: tasks/create_user.yml
+      when: ansible_distribution == 'Ubuntu'
