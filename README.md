@@ -1,19 +1,19 @@
 # ANU
 
-[![Build Status](https://travis-ci.com/MitchellCash/ansible-anu.svg?branch=master)](https://travis-ci.com/MitchellCash/ansible-anu)
+[![CI](https://github.com/MitchellCash/ansible-anu/actions/workflows/ci.yml/badge.svg)](https://github.com/MitchellCash/ansible-anu/actions/workflows/ci.yml)
 
 ## What is ANU
 
 ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in provisioning a new
 Ubuntu machine. It depends on certain third-party Ansible roles and then extends them to offer
-a more opinionated new Ubunutu setup (see [Features](#features)).
+a more opinionated new Ubuntu setup (see [Features](#features)).
 
 ## Features
 
 ### Third-party
 
 * Provides OS hardening via [dev-sec.os-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/os_hardening)
-* Provides SSH harderning via [dev-sec.ssh-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/ssh_hardening)
+* Provides SSH hardening via [dev-sec.ssh-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/ssh_hardening)
 
 ### ANU
 
