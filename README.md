@@ -4,39 +4,40 @@
 
 ## What is ANU
 
-ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in
-provisioning a new Ubuntu machine. It helps create a secure base system, without
-being too overbearing.
+ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in provisioning a new
+Ubuntu machine. It depends on certain third-party Ansible roles and then extends them to offer
+a more opinionated new Ubunutu setup (see [Features](#features)).
 
 ## Features
 
-* Remove APT packages with known issues ([Source](https://github.com/dev-sec/ansible-os-hardening#packages))
-  * xinetd
-  * inetd
-  * tftp-server
-  * ypserv
-  * telnet-server
-  * rsh-server
-  * prelink
-* Enable UFW and allow connections to SSH server port ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-seven-%E2%80%94-set-up-a-basic-firewall))
-* Set secure OpenSSH config values (assumes OpenSSH 6.7+) ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
-* Deactivate Diffie-Hellman moduli less than 3072-bit long ([Source](https://infosec.mozilla.org/guidelines/openssh.html#modern-openssh-67))
-* Prompts for a username, password & ssh public key and creates a new user in the "sudo" group ([Source](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04#step-three-%E2%80%94-root-privileges))
+### Third-party
+
+* Provides OS hardening via [dev-sec.os-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/os_hardening)
+* Provides SSH harderning via [dev-sec.ssh-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/ssh_hardening)
+
+### ANU
+
+* Set server timezone to UTC
+* Configure UFW to allow traffic on the specified SSH port and enable UFW
+* Prompts for a username, password & SSH public key and creates a new user in the "sudo" group
 
 ## Requirements
 
-ANU is tested on Ubuntu LTS releases:
+ANU is tested on the following Ubuntu LTS releases:
 
-* Ubuntu 16.04 (Xenial Xerus)
-* Ubuntu 18.04 (Bionic Beaver)
-* Ubuntu 20.04 (Focal Fossa)
-
-**Ansible**
+### Ubuntu 18.04 (Bionic Beaver)
 
 ```sh
 sudo apt update
 sudo apt install software-properties-common ansible
 ```
+
+### Ubuntu 20.04 (Focal Fossa)
+
+Ubuntu 20.04
+
+**Ansible**
+
 
 **Ansible (Ubuntu <= 18.04)**
 
@@ -76,7 +77,7 @@ Dev notes
 
 1. `ansible-galaxy role install -r requirements.yml`
 1. `ansible-galaxy collection install -r requirements.yml`
-2. `ansible-playbook playbook.yml`
+2. `ansible-playbook anu.yml`
 
 
 On Ubuntu 20.04 need Ansible 2.10

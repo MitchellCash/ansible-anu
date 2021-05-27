@@ -29,7 +29,8 @@
   tasks:
     - name: Set timezone to UTC
       community.general.timezone:
-        name: UTC
+        name: Etc/UTC
+      when: ansible_distribution == 'Ubuntu'
 
     - name: 'ANU: Configure and enable UFW'
       import_tasks: tasks/ufw.yml
