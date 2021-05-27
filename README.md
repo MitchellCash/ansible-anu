@@ -29,61 +29,40 @@ ANU is tested on the following Ubuntu LTS releases:
 
 ```sh
 sudo apt update
-sudo apt install software-properties-common ansible
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 ```
 
 ### Ubuntu 20.04 (Focal Fossa)
 
-Ubuntu 20.04
-
-**Ansible**
-
-
-**Ansible (Ubuntu <= 18.04)**
+Ubuntu 20.04 requires Ansible >=2.10, which as of the time of writing is not yet available in the
+main Ansible PPA. In order to install 2.10 we must add the `ansible/testing-ansible-2.10` PPA.
 
 ```sh
 sudo apt update
 sudo apt install software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo add-apt-repository ppa:ansible/testing-ansible-2.10
 sudo apt install ansible
-```
-
-**Passlib**
-
-Required for generating secure passwords.
-
-```sh
-sudo apt install python3-pip
-pip3 install passlib
 ```
 
 ## Quick Start
 
-Once the requirements are installed, all you need to do is run the following
-command to provision your new Ubuntu system:
+Once the requirements are installed, all you need to do is run the following commands to provision
+your new Ubuntu system:
 
 ```sh
+# Install collection requirements.
+ansible-galaxy collection install -r requirements.yml
+
+# Install role requirements.
+ansible-galaxy role install -r requirements.yml
+
+# Run the ANU playbook.
 ansible-playbook anu.yml
 ```
 
 ## License
 
-ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more
-information or see https://opensource.org/licenses/MIT.
-
-
-
-Dev notes
-
-1. `ansible-galaxy role install -r requirements.yml`
-1. `ansible-galaxy collection install -r requirements.yml`
-2. `ansible-playbook anu.yml`
-
-
-On Ubuntu 20.04 need Ansible 2.10
-
-`sudo add-apt-repository ppa:ansible/testing-ansible-2.10`
-
-`sudo apt update`
-
-`sudo apt install ansible`
+ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or
+see https://opensource.org/licenses/MIT.
