@@ -82,5 +82,7 @@ Dev notes
 On Ubuntu 20.04 need Ansible 2.10
 
 `sudo add-apt-repository ppa:ansible/testing-ansible-2.10`
+
 `sudo apt update`
+
 `sudo apt install ansible`
