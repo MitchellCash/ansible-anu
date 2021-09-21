@@ -62,6 +62,19 @@ ansible-galaxy role install -r requirements.yml
 ansible-playbook anu.yml
 ```
 
+## Known Issues
+
+After running this playbook you can sometimes experience strange networking issues (like when using
+`apt`). This can sometimes be relating to connecting to servers over IPv6. To resolve this issue:
+
+Open `/etc/gai.conf` and uncomment the following line:
+
+```sh
+# precedence ::ffff:0:0/96 100
+```
+
+This will allow you to still use IPv6 but sets IPv4 as the precedence so that apt won’t get stuck.
+
 ## License
 
 ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or
