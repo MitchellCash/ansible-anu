@@ -20,10 +20,10 @@
       private: no
 
   roles:
-    - name: dev-sec.os-hardening
+    - name: devsec.hardening.os_hardening
       when: ansible_distribution == 'Ubuntu'
 
-    - name: dev-sec.ssh-hardening
+    - name: devsec.hardening.ssh_hardening
       when: ansible_distribution == 'Ubuntu'
 
   tasks:
