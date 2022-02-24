@@ -8,9 +8,14 @@ ANU (pronounced 'anew' as in A New Ubuntu) is an Ansible playbook to assist in p
 Ubuntu machine. It depends on certain third-party Ansible roles and then extends them to offer
 a more opinionated new Ubuntu setup (see [Features](#features)).
 
+The goal of ANU is to provide a secure base Ubuntu system, while maintaining a high level of ease
+of use. This means certain additional security features provided by the
+[Dependencies](#dependencies) are reverted back to the system defaults to make the system easier to
+use. See [vars/main.yml](vars/main.yml)) for the list of overrides.
+
 ## Features
 
-### Third-party
+### Dependencies
 
 * Provides OS hardening via [dev-sec.os-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/os_hardening)
 * Provides SSH hardening via [dev-sec.ssh-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/ssh_hardening)
