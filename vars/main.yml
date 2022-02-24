@@ -1,4 +1,7 @@
 ---
+# Disable forced password reset.
+os_auth_pw_max_age: 99999
+
 # Ports on which ssh-server should listen.
 ssh_server_ports: ['4160']
 
