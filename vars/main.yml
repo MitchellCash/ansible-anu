@@ -2,6 +2,11 @@
 # Disable forced password reset.
 os_auth_pw_max_age: 99999
 
+# Revert umask back to the default value of '022' as I found changing it to '027' caused issues
+# with apt and file permissions on imported GPG keys. These are fixable issues, but the goal of
+# ANU is to be secure but easy to to use.
+os_env_umask: 022
+
 # Ports on which ssh-server should listen.
 ssh_server_ports: ['4160']
 
