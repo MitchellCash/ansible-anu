@@ -55,9 +55,6 @@ your new Ubuntu system:
 # Install collection requirements.
 ansible-galaxy collection install -r requirements.yml
 
-# Install role requirements.
-ansible-galaxy role install -r requirements.yml
-
 # Run the ANU playbook.
 ansible-playbook anu.yml
 ```
