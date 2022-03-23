@@ -14,11 +14,11 @@ of use. This means certain additional security features provided by the
 use. See [vars/main.yml](vars/main.yml)) for the list of overrides.
 
 ## Features
-### ANU
 
 * Set server timezone to UTC
-* Configure UFW to allow traffic on the specified SSH port and enable UFW
+* Configure UFW to allow traffic on the specified SSH port and enable UFW (default: `4160`)
 * Prompts for a username, password & SSH public key and creates a new user in the "sudo" group
+
 ### Dependencies
 
 * Provides OS hardening via [dev-sec.os-hardening](https://github.com/dev-sec/ansible-collection-hardening/tree/master/roles/os_hardening)
