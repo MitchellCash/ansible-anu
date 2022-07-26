@@ -37,13 +37,19 @@ dependencies and are outlined below:
 
 ANU is tested on the following Ubuntu LTS releases:
 
-* Ubuntu 18.04 (Bionic Beaver)
-* Ubuntu 20.04 (Focal Fossa)
+### Ubuntu 18.04 (Bionic Beaver) and Ubuntu 20.04 (Focal Fossa)
 
 ```sh
 sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:ansible/ansible-2.10
+sudo apt install ansible
+```
+
+### Ubuntu 22.04 (Jammy Jellyfish)
+
+```sh
+sudo apt update
 sudo apt install ansible
 ```
 
