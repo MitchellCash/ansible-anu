@@ -66,6 +66,12 @@ ansible-galaxy collection install -r requirements.yml
 ansible-playbook anu.yml
 ```
 
+## TODO
+
+- Check if the `ansible-core` package can be used instead of `ansible` as the `ansible-core`
+  package is much smaller and seems to be updated on Ubuntu more frequently. At the time of
+  writing, on Ubuntu 22.04, `ansible` is on `2.10` and `ansible-core` is on `2.12`.
+
 ## License
 
 ANU is released under the terms of the MIT license. See [LICENSE](LICENSE) for more information or
