@@ -37,20 +37,14 @@ dependencies and are outlined below:
 
 ANU is tested on the following Ubuntu LTS releases:
 
-### Ubuntu 18.04 (Bionic Beaver) and Ubuntu 20.04 (Focal Fossa)
+- Ubuntu 20.04 (Focal Fossa)
+- Ubuntu 22.04 (Jammy Jellyfish)
 
 ```sh
 sudo apt update
 sudo apt install software-properties-common
-sudo add-apt-repository ppa:ansible/ansible-2.10
-sudo apt install ansible
-```
-
-### Ubuntu 22.04 (Jammy Jellyfish)
-
-```sh
-sudo apt update
-sudo apt install ansible
+sudo add-apt-repository ppa:ansible/ansible
+sudo apt install ansible-core
 ```
 
 ## Quick Start
@@ -65,12 +59,6 @@ ansible-galaxy collection install -r requirements.yml
 # Run the ANU playbook.
 ansible-playbook anu.yml
 ```
-
-## TODO
-
-- Check if the `ansible-core` package can be used instead of `ansible` as the `ansible-core`
-  package is much smaller and seems to be updated on Ubuntu more frequently. At the time of
-  writing, on Ubuntu 22.04, `ansible` is on `2.10` and `ansible-core` is on `2.12`.
 
 ## License
 
